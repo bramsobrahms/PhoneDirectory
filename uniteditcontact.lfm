@@ -1,0 +1,173 @@
+object EditContact: TEditContact
+  Left = 330
+  Height = 570
+  Top = 32
+  Width = 703
+  Caption = 'EditContact'
+  ClientHeight = 570
+  ClientWidth = 703
+  DesignTimePPI = 120
+  LCLVersion = '4.0.0.2'
+  object Label_EditPhonebook: TLabel
+    Left = 264
+    Height = 35
+    Top = 0
+    Width = 198
+    Caption = 'Edit phonebook'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clNavy
+    Font.Height = -27
+    Font.Name = 'Trebuchet MS'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Edit_NumHome: TEdit
+    Left = 424
+    Height = 28
+    Top = 440
+    Width = 160
+    TabOrder = 0
+  end
+  object Label_NumHome: TLabel
+    Left = 328
+    Height = 20
+    Top = 440
+    Width = 77
+    Caption = 'Num Home'
+  end
+  object Label_Firstname: TLabel
+    Left = 16
+    Height = 20
+    Top = 440
+    Width = 64
+    Caption = 'Firstname'
+  end
+  object Label_Name: TLabel
+    Left = 16
+    Height = 20
+    Top = 376
+    Width = 40
+    Caption = 'Name'
+  end
+  object Edit_Name: TEdit
+    Left = 96
+    Height = 28
+    Top = 376
+    Width = 160
+    TabOrder = 1
+  end
+  object Label_NumGsm: TLabel
+    Left = 328
+    Height = 20
+    Top = 376
+    Width = 67
+    Caption = 'Num GSM'
+  end
+  object Edit_NumGsm: TEdit
+    Left = 424
+    Height = 28
+    Top = 376
+    Width = 160
+    TabOrder = 2
+  end
+  object Edit_Firstname: TEdit
+    Left = 96
+    Height = 28
+    Top = 440
+    Width = 160
+    TabOrder = 3
+  end
+  object Btn_Save: TButton
+    Left = 536
+    Height = 31
+    Top = 504
+    Width = 94
+    Caption = 'Save'
+    TabOrder = 4
+    OnClick = Btn_SaveClick
+  end
+  object DBGrid1: TDBGrid
+    Left = 24
+    Height = 280
+    Top = 56
+    Width = 656
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource1
+    TabOrder = 5
+    OnCellClick = DBGrid1CellClick
+  end
+  object MySQL80Connection1: TMySQL80Connection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'phone_directory'
+    KeepConnection = False
+    Transaction = SQLTransaction1
+    UserName = 'root'
+    CharSet = 'UTF8'
+    HostName = 'localhost'
+    SkipLibraryVersionCheck = False
+    Left = 56
+    Top = 512
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = True
+    Database = MySQL80Connection1
+    Left = 188
+    Top = 512
+  end
+  object SQLQuery1: TSQLQuery
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftAutoInc
+        Precision = -1
+      end    
+      item
+        Name = 'name'
+        DataType = ftString
+        Precision = -1
+        Size = 80
+      end    
+      item
+        Name = 'firstname'
+        DataType = ftString
+        Precision = -1
+        Size = 60
+      end    
+      item
+        Name = 'num_gsm'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'num_home'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'user_id'
+        DataType = ftInteger
+        Precision = -1
+      end>
+    Database = MySQL80Connection1
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      ''
+    )
+    Params = <>
+    Macros = <>
+    Left = 288
+    Top = 512
+  end
+  object DataSource1: TDataSource
+    DataSet = SQLQuery1
+    Left = 384
+    Top = 512
+  end
+end
