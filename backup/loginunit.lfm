@@ -1,0 +1,128 @@
+object Form1: TForm1
+  Left = 352
+  Height = 377
+  Top = 32
+  Width = 411
+  Caption = 'LoginForm'
+  ClientHeight = 377
+  ClientWidth = 411
+  DesignTimePPI = 120
+  object Btn_Connect: TButton
+    Left = 120
+    Height = 31
+    Top = 296
+    Width = 168
+    Caption = 'Connect'
+    TabOrder = 0
+    OnClick = Btn_ConnectClick
+  end
+  object Edit_Username: TEdit
+    Left = 112
+    Height = 28
+    Top = 136
+    Width = 192
+    TabOrder = 1
+  end
+  object Edit_Password: TEdit
+    Left = 112
+    Height = 28
+    Top = 216
+    Width = 192
+    EchoMode = emPassword
+    PasswordChar = '*'
+    TabOrder = 2
+  end
+  object Label_Username: TLabel
+    Left = 112
+    Height = 20
+    Top = 112
+    Width = 66
+    Caption = 'Username'
+  end
+  object Label_Password: TLabel
+    Left = 112
+    Height = 20
+    Top = 192
+    Width = 61
+    Caption = 'Password'
+  end
+  object Label_Title: TLabel
+    Left = 104
+    Height = 32
+    Top = 48
+    Width = 208
+    Caption = 'Directory Phone'
+    Color = clMenuHighlight
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlue
+    Font.Height = -25
+    Font.Name = 'System'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold, fsUnderline]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label_Create_Account: TLabel
+    Cursor = crHandPoint
+    Left = 144
+    Height = 17
+    Top = 328
+    Width = 103
+    Caption = 'Create an account'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlue
+    Font.Height = -13
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsItalic]
+    ParentFont = False
+    OnClick = Label_Create_AccountClick
+  end
+  object Btn_Disconnecte: TButton
+    Left = 120
+    Height = 31
+    Top = 264
+    Width = 168
+    Caption = 'Disconnect'
+    TabOrder = 3
+    Visible = False
+    OnClick = Btn_DisconnecteClick
+  end
+  object MySQL80Connection1: TMySQL80Connection
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'phone_directory'
+    KeepConnection = False
+    Transaction = SQLTransaction1
+    UserName = 'root'
+    CharSet = 'UTF8'
+    HostName = 'localhost'
+    SkipLibraryVersionCheck = False
+    Left = 8
+    Top = 8
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = False
+    Database = MySQL80Connection1
+    Left = 8
+    Top = 80
+  end
+  object SQLQuery1: TSQLQuery
+    FieldDefs = <>
+    Database = MySQL80Connection1
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      ''
+    )
+    Params = <>
+    Macros = <>
+    Left = 8
+    Top = 152
+  end
+  object DataSource1: TDataSource
+    DataSet = SQLQuery1
+    Left = 8
+    Top = 224
+  end
+end

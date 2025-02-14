@@ -1,0 +1,116 @@
+object ViewProfileUser: TViewProfileUser
+  Left = 330
+  Height = 371
+  Top = 32
+  Width = 490
+  Caption = 'ViewProfileUser'
+  ClientHeight = 371
+  ClientWidth = 490
+  DesignTimePPI = 120
+  object LabelProfile: TLabel
+    Left = 168
+    Height = 35
+    Top = 24
+    Width = 85
+    Caption = 'Profile'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clNavy
+    Font.Height = -27
+    Font.Name = 'Trebuchet MS'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Lastname: TLabeledEdit
+    Left = 40
+    Height = 28
+    Top = 96
+    Width = 130
+    EditLabel.Height = 20
+    EditLabel.Width = 130
+    EditLabel.Caption = 'Lastname'
+    TabOrder = 0
+  end
+  object Firstname: TLabeledEdit
+    Left = 261
+    Height = 28
+    Top = 96
+    Width = 150
+    EditLabel.Height = 20
+    EditLabel.Width = 150
+    EditLabel.Caption = 'Firstname'
+    TabOrder = 1
+  end
+  object Password: TLabeledEdit
+    Left = 40
+    Height = 28
+    Top = 184
+    Width = 130
+    EchoMode = emPassword
+    EditLabel.Height = 20
+    EditLabel.Width = 130
+    EditLabel.Caption = 'Password'
+    PasswordChar = '#'
+    TabOrder = 2
+  end
+  object Username: TLabeledEdit
+    Left = 261
+    Height = 28
+    Top = 184
+    Width = 150
+    EditLabel.Height = 20
+    EditLabel.Width = 150
+    EditLabel.Caption = 'Username'
+    TabOrder = 3
+  end
+  object Btn_Save: TButton
+    Left = 48
+    Height = 40
+    Top = 264
+    Width = 94
+    Caption = 'Save'
+    TabOrder = 4
+  end
+  object Btn_Cancel: TButton
+    Left = 288
+    Height = 40
+    Top = 264
+    Width = 94
+    Caption = 'Cancel'
+    TabOrder = 5
+    OnClick = Btn_CancelClick
+  end
+  object MySQL80Connection1: TMySQL80Connection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'phone_directory'
+    KeepConnection = False
+    Transaction = SQLTransaction1
+    UserName = 'root'
+    HostName = 'localhost'
+    SkipLibraryVersionCheck = False
+    Left = 56
+    Top = 312
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = True
+    Database = MySQL80Connection1
+    Left = 192
+    Top = 312
+  end
+  object SQLQuery1: TSQLQuery
+    FieldDefs = <>
+    Database = MySQL80Connection1
+    Transaction = SQLTransaction1
+    Params = <>
+    Macros = <>
+    Left = 296
+    Top = 312
+  end
+  object DataSource1: TDataSource
+    DataSet = SQLQuery1
+    Left = 392
+    Top = 312
+  end
+end
