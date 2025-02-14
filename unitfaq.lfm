@@ -1,0 +1,68 @@
+object MainFAQ: TMainFAQ
+  Left = 474
+  Height = 547
+  Top = 140
+  Width = 693
+  Caption = 'MainFAQ'
+  ClientHeight = 547
+  ClientWidth = 693
+  DesignTimePPI = 120
+  LCLVersion = '4.0.0.1'
+  object Label_NewContact: TLabel
+    Left = 32
+    Height = 20
+    Top = 56
+    Width = 139
+    Caption = 'Create a new contact'
+  end
+  object LabelFaq: TLabel
+    Left = 320
+    Height = 35
+    Top = 8
+    Width = 52
+    Caption = 'FAQ'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clNavy
+    Font.Height = -27
+    Font.Name = 'Trebuchet MS'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label_UpdateOrDelete: TLabel
+    Left = 32
+    Height = 20
+    Top = 152
+    Width = 166
+    Caption = 'Update or delete contact'
+  end
+  object Label_UpdateProfile: TLabel
+    Left = 32
+    Height = 20
+    Top = 368
+    Width = 97
+    Caption = 'Update profile'
+  end
+  object Label_answerCreateContact: TLabel
+    Left = 256
+    Height = 80
+    Top = 56
+    Width = 404
+    Caption = 'Once in the application.'#13#10'There are fields that you must complete:'#13#10' "name", "first name", "number" and once the fields are filled.'#13#10'Click on the Save button'
+  end
+  object Label_AnswerUpdateOrDelete: TLabel
+    Left = 256
+    Height = 200
+    Top = 152
+    Width = 309
+    Caption = 'Update:'#13#10'1 -  Drop-down menu(top) : "Carnet" => "Edit"'#13#10'2 - Enter the column number.'#13#10'3 - Change the information.'#13#10'4 - Click on "Save".'#13#10#13#10'To delete a contact:'#13#10'1 - Drop-down menu(top) : "Carnet" => "Edit"'#13#10'2 - Enter the column number.'#13#10'3 - Click "Delete".'
+  end
+  object Label_AnswerUpdateProfile: TLabel
+    Left = 256
+    Height = 80
+    Top = 368
+    Width = 293
+    Caption = 'Update:'#13#10'1 -  Drop-down menu(top) : Profile=> "Edit"'#13#10'2 - Change the information.'#13#10'4 - Click on "Save".'
+  end
+end
